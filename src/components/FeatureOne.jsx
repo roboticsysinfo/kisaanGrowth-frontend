@@ -44,6 +44,7 @@ const FeatureOne = () => {
         dots: false,
         arrows: true,
         infinite: true,
+        autoPlay: true,
         speed: 1000,
         slidesToShow: 10,
         slidesToScroll: 1,
@@ -106,7 +107,7 @@ const FeatureOne = () => {
                                                 {category.name}
                                             </Link>
                                         </h6>
-                                        <span className="text-sm text-gray-400">125+ Products</span>
+                                        <span className="text-sm text-gray-400">0 Products</span>
                                     </div>
                                 </div>
                             ))}
