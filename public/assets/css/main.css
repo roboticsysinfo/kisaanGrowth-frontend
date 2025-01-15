@@ -9015,7 +9015,7 @@ input:focus-visible {
 }
 
 .product-card__thumb img {
-    max-width: 160px;
+    max-width: 160px !important;
     width: 100%;
 }
 
