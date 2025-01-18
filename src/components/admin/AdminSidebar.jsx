@@ -1,4 +1,3 @@
-// AdminSidebar.jsx
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -6,13 +5,13 @@ import { Link } from "react-router-dom";
 const AdminSidebar = () => {
   return (
     <div className="bg-light vh-100 p-3" style={{ width: "250px" }}>
-      <h5 className="mb-4">Navigation</h5>
-      <Nav defaultActiveKey="/dashboard" className="flex-column">
-        <Link className="nav-link" to="/admin/dashboard">Dashboard</Link >
-        <Link className="nav-link" to="/admin/farmers">Farmers List</Link>
-        <Link className="nav-link" to="/admin/add-farmer">Add Farmer</Link >
-        <Link className="nav-link" to="/admin/users">Users</Link>
-        <Link className="nav-link" to="/admin/settings">Settings</Link>
+      <h5 className="mb-20">Navigation</h5>
+      <Nav defaultActiveKey="/admin/dashboard" className="flex-column">
+        <Link className="nav-link" to="dashboard">Dashboard</Link>  {/* Use relative paths */}
+        <Link className="nav-link" to="farmers">Farmers List</Link> {/* Relative path */}
+        <Link className="nav-link" to="kyc-requests">KYC Requests</Link> {/* Relative path */}
+        <Link className="nav-link" to="users">Users</Link> {/* Relative path */}
+        <Link className="nav-link" to="settings">Settings</Link> {/* Relative path */}
       </Nav>
     </div>
   );

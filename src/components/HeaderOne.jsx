@@ -311,7 +311,7 @@ const HeaderOne = () => {
                         <ul className="flex-align flex-wrap d-none d-md-flex">
                             <li className="border-right-item">
                                 <Link
-                                    to="#"
+                                    to="/farmer/login"
                                     className="text-white text-sm hover-text-decoration-underline"
                                 >
                                     Become A Seller
@@ -323,22 +323,6 @@ const HeaderOne = () => {
                                     className="text-white text-sm hover-text-decoration-underline"
                                 >
                                     About us
-                                </Link>
-                            </li>
-                            <li className="border-right-item">
-                                <Link
-                                    to="#"
-                                    className="text-white text-sm hover-text-decoration-underline"
-                                >
-                                    Free Delivery
-                                </Link>
-                            </li>
-                            <li className="border-right-item">
-                                <Link
-                                    to="#"
-                                    className="text-white text-sm hover-text-decoration-underline"
-                                >
-                                    Returns Policy
                                 </Link>
                             </li>
                         </ul>
@@ -359,203 +343,10 @@ const HeaderOne = () => {
                                             Call Center
                                         </Link>
                                     </li>
-                                    <li className="nav-submenu__item">
-                                        <Link
-                                            to="#"
-                                            className="nav-submenu__link hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                        >
-                                            <span className="text-sm d-flex">
-                                                <i className="ph ph-chat-circle-dots" />
-                                            </span>
-                                            Live Chat
-                                        </Link>
-                                    </li>
+
                                 </ul>
                             </li>
-                            <li className="on-hover-item border-right-item border-right-item-sm-space has-submenu arrow-white">
-                                {/* Display the selected language here */}
-                                <Link to="#" className="selected-text text-white text-sm py-8">
-                                    {selectedLanguage}
-                                </Link>
-                                <ul className="selectable-text-list on-hover-dropdown common-dropdown common-dropdown--sm max-h-200 scroll-sm px-0 py-8">
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleLanguageChange("English")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag1.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            English
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleLanguageChange("Japan")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag2.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            Japan
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleLanguageChange("French")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag3.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            French
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleLanguageChange("Germany")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag4.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            Germany
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleLanguageChange("Bangladesh")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag6.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            Bangladesh
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleLanguageChange("South Korea")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag5.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            South Korea
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="on-hover-item border-right-item border-right-item-sm-space has-submenu arrow-white">
-                                {/* Display the selected currency */}
-                                <Link to="#" className="selected-text text-white text-sm py-8">
-                                    {selectedCurrency}
-                                </Link>
-                                <ul className="selectable-text-list on-hover-dropdown common-dropdown common-dropdown--sm max-h-200 scroll-sm px-0 py-8">
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleCurrencyChange("USD")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag1.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            USD
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleCurrencyChange("Yen")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag2.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            Yen
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleCurrencyChange("Franc")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag3.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            Franc
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleCurrencyChange("EURO")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag4.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            EURO
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleCurrencyChange("BDT")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag6.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            BDT
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="#"
-                                            className="hover-bg-gray-100 text-gray-500 text-xs py-6 px-16 flex-align gap-8 rounded-0"
-                                            onClick={() => handleCurrencyChange("WON")}
-                                        >
-                                            <img
-                                                src="assets/images/thumbs/flag5.png"
-                                                alt=""
-                                                className="w-16 h-12 rounded-4 border border-gray-100"
-                                            />
-                                            WON
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </li>
+
                             <li className="border-right-item">
                                 <Link
                                     to="/account"
@@ -1006,146 +797,25 @@ const HeaderOne = () => {
                             <div className="header-menu d-lg-block d-none">
                                 {/* Nav Menu Start */}
                                 <ul className="nav-menu flex-align ">
-                                    <li className="on-hover-item nav-menu__item has-submenu">
-                                        <Link to="#" className="nav-menu__link">
+                                    <li className="on-hover-item nav-menu__item ">
+                                        <Link to="/" className="nav-menu__link">
                                             Home
                                         </Link>
-                                        <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/"
-                                                    // className={`common-dropdown__link nav-submenu__link hover-bg-neutral-100 `}
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    Home One
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/index-two"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Home Two
-                                                </NavLink>
-                                            </li>
-                                        </ul>
                                     </li>
-                                    <li className="on-hover-item nav-menu__item has-submenu">
-                                        <Link to="#" className="nav-menu__link">
-                                            Shop
+                                    <li className="on-hover-item nav-menu__item ">
+                                        <Link to="/shop" className="nav-menu__link">
+                                            Products
                                         </Link>
-                                        <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/shop"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Shop
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/product-details"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Shop Details
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/product-details-two"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Shop Details Two
-                                                </NavLink>
-                                            </li>
-                                        </ul>
                                     </li>
-                                    <li className="on-hover-item nav-menu__item has-submenu">
-                                        <span className="badge-notification bg-warning-600 text-white text-sm py-2 px-8 rounded-4">
-                                            New
-                                        </span>
-                                        <Link to="#" className="nav-menu__link">
-                                            Pages
+                                    <li className="on-hover-item nav-menu__item ">
+                                        <Link to="/farmers" className="nav-menu__link">
+                                             Farmers
                                         </Link>
-                                        <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/cart"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Cart
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/checkout"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Checkout{" "}
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/account"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Account
-                                                </NavLink>
-                                            </li>
-                                        </ul>
                                     </li>
-                                    <li className="on-hover-item nav-menu__item has-submenu">
-                                        <Link to="#" className="nav-menu__link">
-                                            Blog
+                                    <li className="on-hover-item nav-menu__item ">
+                                        <Link to="/blogs" className="nav-menu__link">
+                                            Blogs
                                         </Link>
-                                        <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/blog"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Blog
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/blog-details"
-                                                    className={(navData) =>
-                                                        navData.isActive ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage" : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Blog Details
-                                                </NavLink>
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li className="nav-menu__item">
                                         <NavLink to="/contact" className={(navData) =>
@@ -1180,17 +850,6 @@ const HeaderOne = () => {
                                             <i className="ph ph-magnifying-glass" />
                                         </span>
                                     </button>
-                                    <Link to="/cart" className="flex-align gap-4 item-hover">
-                                        <span className="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
-                                            <i className="ph ph-heart" />
-                                            <span className="w-16 h-16 flex-center rounded-circle bg-main-600 text-white text-xs position-absolute top-n6 end-n4">
-                                                2
-                                            </span>
-                                        </span>
-                                        <span className="text-md text-gray-500 item-hover__text d-none d-lg-flex">
-                                            Wishlist
-                                        </span>
-                                    </Link>
                                     <Link to="/cart" className="flex-align gap-4 item-hover">
                                         <span className="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
                                             <i className="ph ph-shopping-cart-simple" />

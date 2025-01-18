@@ -3,18 +3,13 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../redux/slices/productSlice';
 import { fetchCategories } from '../redux/slices/categorySlice'
-import serveruri from '../utils/serveruri';
 
 const ShopSection = () => {
-
-
 
     const dispatch = useDispatch();
 
     // Products state
-    const { products, status: productStatus } = useSelector((state) => state.product);
-
-    console.log(products)
+    const { data: products, status: productStatus } = useSelector((state) => state.products);
 
     // Categories state
     const { categories, status: categoryStatus, error: categoryError } = useSelector((state) => state.categories);
@@ -29,7 +24,7 @@ const ShopSection = () => {
     // Fetch products when the component mounts
     useEffect(() => {
         if (productStatus === 'idle') {
-            dispatch(fetchProducts());
+            dispatch(fetchProducts({ page: 1, limit: 10, search: '', filter: '' }));
         }
     }, [dispatch, productStatus]);
 
@@ -55,7 +50,6 @@ const ShopSection = () => {
     if (categoryStatus === 'failed') {
         return <p>Error: {categoryError}</p>;
     }
-
 
 
     return (
@@ -392,7 +386,7 @@ const ShopSection = () => {
                                 <div key={product.id} className="product-card h-100 p-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
                                     <Link to={`/product-details/${product._id}`} className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative">
                                         <img
-                                            src={product.product_image ? `${serveruri}${product.product_image}` : 'https://placehold.co/100x100'}
+                                            src={product.product_image ? `${process.env.REACT_APP_BASE_URL_SECONDARY}${product.product_image}` : 'https://placehold.co/100x100'}
                                             alt={product.name}
                                             className="w-auto max-w-unset"
                                         />
