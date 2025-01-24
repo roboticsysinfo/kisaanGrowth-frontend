@@ -19,7 +19,7 @@ const PrivateRoute = ({ allowedRoles, redirectTo, children }) => {
   return (
     <div>
       {children}  {/* Render the layout (e.g., sidebar, header) */}
-      <Outlet />  {/* Render the child routes like FarmerDashboard */}
+      <Outlet />
     </div>
   );
 };

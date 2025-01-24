@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import RouteScrollToTop from "./helper/RouteScrollToTop";
 import PhosphorIconInit from "./helper/PhosphorIconInit";
 import HomePageOne from "./pages/HomePageOne";
@@ -27,6 +27,15 @@ import AdminLogin from "./components/admin/AdminLogin";
 import Users from "./pages/admin/Users";
 import Settings from './pages/admin/Settings';
 import KycRequestsList from "./pages/admin/KycRequestsList";
+import ShopDetail from "./pages/farmer/shop/ShopDetail";
+import AddShop from './pages/farmer/shop/AddShop'
+import ProductsList from './pages/farmer/product/ProductsList'
+import DeliveryPreferencePage from "./pages/farmer/DeliveryPreference";
+import FarmDetail from "./pages/farmer/FarmDetail"
+import CropsDetail from "./pages/farmer/CropsDetail"
+import CategoryList from "./pages/admin/CategoryList";
+import FarmerDetailPage from "./pages/FarmerDetailPage";
+
 
 function App() {
   return (
@@ -37,22 +46,19 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePageOne />} />
-        <Route path="/shop" element={<ShopPage />} />
-        <Route path="/farmers" element={<VendorPage />} />
-        <Route path="/product-details/:id" element={<ProductDetailsPageOne />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog-details" element={<BlogDetailsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="shop" element={<ShopPage />} />
+        <Route path="farmers" element={<VendorPage />} />
+        <Route path="product-details/:id" element={<ProductDetailsPageOne />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog-details/:id" element={<BlogDetailsPage />} />
+        <Route path="farmer/:id" element={<FarmerDetailPage />} />
+        <Route path="contact" element={<ContactPage />} />
 
         {/* Login and Register Routes */}
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
 
-        <Route path="/farmer/login" element={<FarmerLogin />} />
-        <Route path="/farmer/register" element={<FarmerRegister />} />
-
-        <Route path="/admin/login" element={<AdminLogin />} /> {/* Admin login */}
 
         {/* Customer Routes */}
         <Route
@@ -83,6 +89,7 @@ function App() {
         >
           <Route index element={<AdminDashboard />} />
           <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="categories-list" element={<CategoryList />} />
           <Route path="farmers" element={<FarmersList />} />
           <Route path="kyc-requests" element={<KycRequestsList />} />
           <Route path="users" element={<Users />} />
@@ -101,7 +108,13 @@ function App() {
         >
           <Route path="farmer-dashboard" element={<FarmerDashboard />} /> {/* Use relative path */}
           <Route path="add-product" element={<AddProduct />} />
+          <Route path="products-list" element={<ProductsList />} />
           <Route path="farmer-profile" element={<FarmerProfile />} />
+          <Route path="add-shop" element={<AddShop />} />
+          <Route path="shop-details" element={<ShopDetail />} />
+          <Route path="delivery-preference" element={<DeliveryPreferencePage />} />
+          <Route path="farm-details" element={<FarmDetail />} />
+          <Route path="crops-detail" element={<CropsDetail />} />
         </Route>
 
         {/* Fallback Route */}

@@ -8,6 +8,7 @@ const AdminSidebar = () => {
       <h5 className="mb-20">Navigation</h5>
       <Nav defaultActiveKey="/admin/dashboard" className="flex-column">
         <Link className="nav-link" to="dashboard">Dashboard</Link>  {/* Use relative paths */}
+        <Link className="nav-link" to="categories-list">Categories</Link> {/* Relative path */}
         <Link className="nav-link" to="farmers">Farmers List</Link> {/* Relative path */}
         <Link className="nav-link" to="kyc-requests">KYC Requests</Link> {/* Relative path */}
         <Link className="nav-link" to="users">Users</Link> {/* Relative path */}

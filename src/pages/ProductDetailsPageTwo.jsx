@@ -1,7 +1,7 @@
 import React from "react";
 import Preloader from "../helper/Preloader";
 import ColorInit from "../helper/ColorInit";
-import HeaderTwo from "../components/HeaderTwo";
+import HeaderOne from "../components/HeaderOne";
 import Breadcrumb from "../components/Breadcrumb";
 import ProductDetailsTwo from "../components/ProductDetailsTwo";
 import NewArrivalTwo from "../components/NewArrivalTwo";
@@ -27,8 +27,8 @@ const ProductDetailsPageTwo = () => {
       {/* Preloader */}
       <Preloader />
 
-      {/* HeaderTwo */}
-      <HeaderTwo category={true} />
+      {/* HeaderOne */}
+      <HeaderOne category={true} />
 
       {/* Breadcrumb */}
       <Breadcrumb title={"Product Details"} />

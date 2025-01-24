@@ -1,13 +1,13 @@
 import React from "react";
 import Preloader from "../helper/Preloader";
 import ColorInit from "../helper/ColorInit";
-import HeaderTwo from "../components/HeaderTwo";
 import Breadcrumb from "../components/Breadcrumb";
 import FooterTwo from "../components/FooterTwo";
 import BottomFooter from "../components/BottomFooter";
 import ShippingOne from "../components/ShippingOne";
 import BlogDetails from "../components/BlogDetails";
 import ScrollToTop from "react-scroll-to-top";
+import HeaderOne from "../components/HeaderOne";
 const BlogDetailsPage = () => {
   return (
     <>
@@ -20,8 +20,8 @@ const BlogDetailsPage = () => {
       {/* Preloader */}
       <Preloader />
 
-      {/* HeaderTwo */}
-      <HeaderTwo category={true} />
+      {/* HeaderOne */}
+      <HeaderOne category={true} />
 
       {/* Breadcrumb */}
       <Breadcrumb title={"Blog Details"} />

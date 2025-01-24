@@ -1,7 +1,7 @@
 import React from "react";
 import Preloader from "../helper/Preloader";
 import Login from "../components/Login"
-import HeaderTwo from "../components/HeaderTwo";
+import HeaderOne from "../components/HeaderOne";
 import Breadcrumb from "../components/Breadcrumb";
 import FooterTwo from "../components/FooterTwo";
 import BottomFooter from "../components/BottomFooter";
@@ -23,8 +23,8 @@ const LoginPage = () => {
       {/* Preloader */}
       <Preloader />
 
-      {/* HeaderTwo */}
-      <HeaderTwo category={true} />
+      {/* HeaderOne */}
+      <HeaderOne category={true} />
 
       {/* Breadcrumb */}
       <Breadcrumb title={"Account"} />

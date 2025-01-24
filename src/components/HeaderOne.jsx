@@ -24,18 +24,6 @@ const HeaderOne = () => {
 
     }, []);
 
-    // Set the default language
-    const [selectedLanguage, setSelectedLanguage] = useState("Eng");
-    const handleLanguageChange = (language) => {
-        setSelectedLanguage(language);
-    };
-
-    // Set the default currency
-    const [selectedCurrency, setSelectedCurrency] = useState("USD");
-    const handleCurrencyChange = (currency) => {
-        setSelectedCurrency(currency);
-    };
-
 
     // Mobile menu support
     const [menuActive, setMenuActive] = useState(false)
@@ -311,7 +299,7 @@ const HeaderOne = () => {
                         <ul className="flex-align flex-wrap d-none d-md-flex">
                             <li className="border-right-item">
                                 <Link
-                                    to="/farmer/login"
+                                    to="farmer/login"
                                     className="text-white text-sm hover-text-decoration-underline"
                                 >
                                     Become A Seller

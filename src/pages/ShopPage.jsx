@@ -1,6 +1,6 @@
 import React from "react";
 import Preloader from "../helper/Preloader";
-import HeaderTwo from "../components/HeaderTwo";
+import HeaderOne from "../components/HeaderOne";
 import Breadcrumb from "../components/Breadcrumb";
 import ShopSection from "../components/ShopSection";
 import ShippingTwo from "../components/ShippingTwo";
@@ -22,7 +22,7 @@ const ShopPage = () => {
       <Preloader />
 
       {/* HeaderOne */}
-      <HeaderTwo category={true} />
+      <HeaderOne category={true} />
 
       {/* Breadcrumb */}
       <Breadcrumb title={"Shop"} />

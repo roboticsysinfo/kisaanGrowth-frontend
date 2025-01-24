@@ -13,14 +13,22 @@ export const fetchCategoryById = createAsyncThunk('categories/fetchCategoryById'
 });
 
 export const createCategory = createAsyncThunk('categories/createCategory', async (category) => {
-  const response = await api.post('/category', category);
+  const response = await api.post('/category', category, {
+    headers: { "Content-Type": "multipart/form-data" }, // Ensure proper headers for FormData
+  });
   return response.data.category;
 });
 
-export const updateCategory = createAsyncThunk('categories/updateCategory', async ({ id, category }) => {
-  const response = await api.put(`/category/${id}`, category);
-  return response.data.category;
-});
+export const updateCategory = createAsyncThunk(
+  "categories/updateCategory",
+  async ({ id, category }) => {
+    const response = await api.put(`/category/${id}`, category, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    return response.data; // Ensure the API returns the updated category object
+  }
+);
+
 
 export const deleteCategory = createAsyncThunk('categories/deleteCategory', async (id) => {
   await api.delete(`/category/${id}`);

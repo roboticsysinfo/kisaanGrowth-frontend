@@ -140,7 +140,7 @@ const VendorSection = () => {
                                         <div className="vendors-two-item__top bg-overlay style-two position-relative">
                                             <div className="vendors-two-item__thumbs h-210">
                                                 <img
-                                                    src={`http://localhost:5000/${shop.shop_image}`} // Adjust to your image URL
+                                                    src={`${process.env.REACT_APP_BASE_URL_PRIMARY}${shop.shop_cover_image}`} // Adjust to your image URL
                                                     alt={shop.shop_name}
                                                     className="cover-img"
                                                 />
@@ -148,7 +148,7 @@ const VendorSection = () => {
                                             <div className="position-absolute top-0 inset-inline-start-0 w-100 h-100 p-24 z-1 d-flex flex-column justify-content-between">
                                                 <div className="d-flex align-items-center justify-content-between">
                                                     <span className="w-80 h-80 flex-center bg-white rounded-circle flex-shrink-0">
-                                                        <img src="assets/images/thumbs/vendors-two-icon1.png" alt="Icon" />
+                                                        <img src={`${process.env.REACT_APP_BASE_URL_PRIMARY}${shop.shop_image}`} alt="Icon" />
                                                     </span>
                                                     <button
                                                         type="button"
@@ -159,9 +159,9 @@ const VendorSection = () => {
                                                 </div>
                                                 <div className="mt-16">
                                                     <h6 className="text-white fw-semibold mb-12">
-                                                        <a href={`/vendor-two-details/${shop._id}`}>
+                                                        <Link to={`/farmer-shop-details/${shop._id}`}>
                                                             {shop.shop_name}
-                                                        </a>
+                                                        </Link>
                                                     </h6>
                                                     <div className="flex-align gap-6">
                                                         {/* Add Star Rating */}
@@ -203,12 +203,12 @@ const VendorSection = () => {
                                                     </a>
                                                 </div>
                                             </div>
-                                            <a
+                                            <Link
                                                 className="btn bg-neutral-600 hover-bg-neutral-700 text-white py-12 px-24 rounded-8 flex-center gap-8 fw-medium mt-24"
-                                                href={`/vendor-two-details/${shop._id}`}
+                                                to={`farmer-two-details/${shop._id}`}
                                             >
                                                 View Shop <i className="ph ph-arrow-right" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 ))}

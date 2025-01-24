@@ -1,6 +1,6 @@
 import React from "react";
 import Preloader from "../helper/Preloader";
-import HeaderTwo from "../components/HeaderTwo";
+import HeaderOne from "../components/HeaderOne";
 import BannerTwo from "../components/BannerTwo";
 import PromotionalTwo from "../components/PromotionalTwo";
 import DealsOne from "../components/DealsOne";
@@ -21,6 +21,7 @@ import FooterTwo from "../components/FooterTwo";
 import BottomFooter from "../components/BottomFooter";
 import ColorInit from "../helper/ColorInit";
 import ScrollToTop from "react-scroll-to-top";
+import HeaderOne from "../components/HeaderOne";
 
 const HomePageTwo = () => {
 
@@ -37,8 +38,8 @@ const HomePageTwo = () => {
       {/* Preloader */}
       <Preloader />
 
-      {/* HeaderTwo */}
-      <HeaderTwo category={false} />
+      {/* HeaderOne */}
+      <HeaderOne category={false} />
 
       {/* BannerTwo */}
       <BannerTwo />

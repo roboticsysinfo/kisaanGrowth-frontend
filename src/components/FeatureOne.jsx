@@ -98,7 +98,10 @@ const FeatureOne = () => {
                                 <div key={category._id} className="feature-item text-center">
                                     <div className="feature-item__thumb rounded-circle">
                                         <Link to="/shop" className="w-100 h-100 flex-center">
-                                            <img src={category.category_image ? `${process.env.REACT_APP_BASE_URL_SECONDARY}${category.category_image}` : 'https://placehold.co/100x100'} alt={category.name} />
+                                            <img src={category.category_image ? `${process.env.REACT_APP_BASE_URL_SECONDARY}${category.category_image}` : 'https://placehold.co/100x100'} alt={category.name} 
+                                                width={100}
+                                                height={100}
+                                            />
                                         </Link>
                                     </div>
                                     <div className="feature-item__content mt-16">

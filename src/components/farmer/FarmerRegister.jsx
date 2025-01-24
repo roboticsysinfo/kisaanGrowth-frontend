@@ -11,6 +11,7 @@ const FarmerRegister = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
     const [aadharCard, setAadharCard] = useState('');
+    const [uploadAadharCard, setUploadAadharCard] = useState('');
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
@@ -18,19 +19,23 @@ const FarmerRegister = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
 
-        const farmerData = {
-            name,
-            email,
-            password,
-            phoneNumber,
-            address,
-            aadharCard,
-        };
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('password', password);
+        formData.append('phoneNumber', phoneNumber);
+        formData.append('address', address);
+        formData.append('aadharCard', aadharCard);
+        formData.append('uploadAadharCard', uploadAadharCard);  // Add the file here
 
         setLoading(true);
 
         try {
-            const response = await api.post('/farmer/register', farmerData);
+            const response = await api.post('/farmer/register', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',  // Set the correct content type
+                },
+            });
             toast.success(response.data.message);
             navigate('/farmer/login'); // Redirect to login page after successful registration
         } catch (error) {
@@ -40,12 +45,14 @@ const FarmerRegister = () => {
         }
     };
 
+
+
     return (
         <Container className="mt-5 pt-5">
             <Row className="justify-content-center">
                 <Col md={6}>
                     <h2 className="text-center mb-4">Farmer Register</h2>
-                    <Form onSubmit={handleRegister}>
+                    <Form onSubmit={handleRegister} encType="multipart/form-data">
                         <Form.Group className="my-5" controlId="formName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control
@@ -111,6 +118,18 @@ const FarmerRegister = () => {
                                 required
                             />
                         </Form.Group>
+
+                        <Form.Group className="my-5" controlId="formuploadAadharCard">
+                            <Form.Label>Upload Aadhar Card</Form.Label>
+                            <Form.Control
+                                type="file"
+                                placeholder="Upload Aadhar Card"
+                                id="uploadAadharCard"
+                                onChange={(e) => setUploadAadharCard(e.target.files[0])}  // Capture the file here
+                                required
+                            />
+                        </Form.Group>
+
 
                         <Button variant="primary" type="submit" block disabled={loading}>
                             {loading ? 'Registering...' : 'Register'}

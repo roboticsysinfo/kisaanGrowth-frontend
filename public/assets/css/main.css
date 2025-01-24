@@ -123,7 +123,7 @@
     --main-300: hsl(var(--main-h), var(--main-s), calc(var(--main-l) + (100% - var(--main-l)) * 0.6));
     --main-400: hsl(var(--main-h), var(--main-s), calc(var(--main-l) + (100% - var(--main-l)) * 0.5));
     --main-500: hsl(var(--main-h), var(--main-s), calc(var(--main-l) + (100% - var(--main-l)) * 0.4));
-    --main-600: hsl(var(--main-h), var(--main-s), var(--main-l));
+    --main-600: #299e60;
     --main-700: hsl(var(--main-h), var(--main-s), calc(var(--main-l) - var(--main-l) * 0.1));
     --main-800: hsl(var(--main-h), var(--main-s), calc(var(--main-l) - var(--main-l) * 0.2));
     --main-900: hsl(var(--main-h), var(--main-s), calc(var(--main-l) - var(--main-l) * 0.3));

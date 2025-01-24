@@ -12,8 +12,6 @@ const KycRequestsList = () => {
     dispatch(fetchKYCRequests());
   }, [dispatch]);
 
-  // Check the data structure in the console
-  console.log(kycRequests.farmers);  // Ensure 'farmers' array is available
 
   const handleApprove = async (id) => {
     const response = dispatch(approveKYCRequest(id));
@@ -48,6 +46,24 @@ const KycRequestsList = () => {
       selector: (row) => row.aadharCard,
     },
     {
+      name: 'Aadhar Card Image',
+      selector: (row) => {
+        const imageUrl = `${process.env.REACT_APP_BASE_URL_PRIMARY}${row.uploadAadharCard}`;
+        return (
+          <img
+            src={imageUrl}
+            alt="Aadhar"
+            width={80}
+            height={80}
+            style={{
+              paddingTop: '10px',
+              paddingBottom: '10px'
+            }}
+          />
+        );
+      },
+    },
+    {
       name: 'Actions',
       cell: (row) => (
         <div>
@@ -64,7 +80,15 @@ const KycRequestsList = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-20">KYC Requests</h2>
+
+      <div className="row mt-20">
+        <div className="col-lg-12">
+          <h3 className="mb-20">KYC Requests</h3>
+        </div>
+      </div>
+
+      <hr />
+
       {loading && <p>Loading...</p>}
       {error && <p className="text-danger">{error.message || "An error occurred"}</p>}
       <DataTable
