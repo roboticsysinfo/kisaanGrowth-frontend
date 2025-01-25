@@ -299,7 +299,7 @@ const HeaderOne = () => {
                         <ul className="flex-align flex-wrap d-none d-md-flex">
                             <li className="border-right-item">
                                 <Link
-                                    to="farmer/login"
+                                    to="farmer/register"
                                     className="text-white text-sm hover-text-decoration-underline"
                                 >
                                     Become A Seller

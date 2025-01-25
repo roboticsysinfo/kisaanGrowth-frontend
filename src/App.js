@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./app.css"
 import RouteScrollToTop from "./helper/RouteScrollToTop";
 import PhosphorIconInit from "./helper/PhosphorIconInit";
 import HomePageOne from "./pages/HomePageOne";
@@ -52,7 +53,7 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog-details/:id" element={<BlogDetailsPage />} />
-        <Route path="farmer/:id" element={<FarmerDetailPage />} />
+        <Route path="farmers-shops/:shopId" element={<FarmerDetailPage />} />
         <Route path="contact" element={<ContactPage />} />
 
         {/* Login and Register Routes */}
@@ -78,7 +79,12 @@ function App() {
           }
         />
 
+
+
         {/* Admin Routes */}
+
+        <Route path="/admin/login" element={<AdminLogin />} />
+
         <Route
           path="/admin"
           element={
@@ -98,10 +104,14 @@ function App() {
 
 
         {/* Farmer Routes */}
+
+        <Route path="/farmer/login" element={<FarmerLogin />} />
+        <Route path="/farmer/register" element={<FarmerRegister />} />
+
         <Route
           path="/farmer"
           element={
-            <PrivateRoute allowedRoles={["farmer"]} redirectTo="/farmer/login">
+            <PrivateRoute allowedRoles={["farmer"]} redirectTo="login">
               <FarmerLayout />
             </PrivateRoute>
           }

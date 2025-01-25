@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ allowedRoles, redirectTo, children }) => {
   const token = localStorage.getItem('token'); // Get token from localStorage
@@ -19,7 +19,6 @@ const PrivateRoute = ({ allowedRoles, redirectTo, children }) => {
   return (
     <div>
       {children}  {/* Render the layout (e.g., sidebar, header) */}
-      <Outlet />
     </div>
   );
 };

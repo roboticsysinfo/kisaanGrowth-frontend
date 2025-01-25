@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories } from '../redux/slices/categorySlice';
 import { Link } from 'react-router-dom';
-import { fetchShops } from '../redux/slices/shopSLice';
+import { fetchShops } from '../redux/slices/shopSlice';
 
 const VendorSection = () => {
 
@@ -11,7 +11,10 @@ const VendorSection = () => {
     // Categories state
     const { categories, status: categoryStatus, error: categoryError } = useSelector((state) => state.categories);
     // Access shops from Redux store
-    const { shops, status, error } = useSelector((state) => state.shop);
+    const { shops = [], status, error } = useSelector((state) => state.shop);
+
+console.log('Shops from Redux:', shops);  // Log the state to check if it's correct
+
 
     // Fetch categories when the component mounts
     useEffect(() => {
@@ -21,8 +24,8 @@ const VendorSection = () => {
     }, [dispatch, categoryStatus]);
 
     useEffect(() => {
-        // Fetch shops data when the component mounts
-        dispatch(fetchShops({ page: 1, limit: 10 }));
+        // Dispatch the fetchShops action with the params for limiting results to 6
+        dispatch(fetchShops({ page: 1, limit: 6 }));
     }, [dispatch]);
 
     // Handle loading and error states for categories
@@ -34,19 +37,13 @@ const VendorSection = () => {
     }
 
     // Handle loading and error states for shops
-    if (status === 'loading') {
-        return <div>Loading shops...</div>;
-    }
+    if (status === 'loading') return <div>Loading...</div>;
     if (status === 'failed') {
-        return <div>Error loading shops: {error}</div>;
+      return <div>Error: {error?.message || 'An error occurred'}</div>;
     }
 
-    // Ensure that `shops` is an array before mapping over it
-    if (!Array.isArray(shops) || shops.length === 0) {
-        return <div>No shops available</div>;
-    }
 
-    console.log(shops); // Debug: check the structure of shops
+console.log(shops)
 
     return (
         <>
@@ -148,7 +145,7 @@ const VendorSection = () => {
                                             <div className="position-absolute top-0 inset-inline-start-0 w-100 h-100 p-24 z-1 d-flex flex-column justify-content-between">
                                                 <div className="d-flex align-items-center justify-content-between">
                                                     <span className="w-80 h-80 flex-center bg-white rounded-circle flex-shrink-0">
-                                                        <img src={`${process.env.REACT_APP_BASE_URL_PRIMARY}${shop.shop_image}`} alt="Icon" />
+                                                        <img src={`${process.env.REACT_APP_BASE_URL_PRIMARY}${shop.shop_profile_image}`} alt="Icon" />
                                                     </span>
                                                     <button
                                                         type="button"
@@ -184,28 +181,21 @@ const VendorSection = () => {
                                                     <span className="flex-center text-main-two-600 text-2xl flex-shrink-0">
                                                         <i className="ph ph-map-pin-line" />
                                                     </span>
-                                                    <p className="text-md text-gray-900">{shop.shop_location}</p>
+                                                    <p className="text-md text-gray-900">{shop.shop_address}</p>
                                                 </div>
-                                                <div className="flex-align gap-8">
-                                                    <span className="flex-center text-main-two-600 text-2xl flex-shrink-0">
-                                                        <i className="ph ph-envelope-simple" />
-                                                    </span>
-                                                    <a href={`mailto:${shop.shop_email}`} className="text-md text-gray-900 hover-text-main-60">
-                                                        {shop.shop_email}
-                                                    </a>
-                                                </div>
+
                                                 <div className="flex-align gap-8">
                                                     <span className="flex-center text-main-two-600 text-2xl flex-shrink-0">
                                                         <i className="ph ph-phone" />
                                                     </span>
-                                                    <a href={`tel:${shop.shop_phone}`} className="text-md text-gray-900 hover-text-main-60">
-                                                        {shop.shop_phone}
+                                                    <a href={`tel:${shop.phoneNumber}`} className="text-md text-gray-900 hover-text-main-60">
+                                                        {shop.phoneNumber}
                                                     </a>
                                                 </div>
                                             </div>
                                             <Link
                                                 className="btn bg-neutral-600 hover-bg-neutral-700 text-white py-12 px-24 rounded-8 flex-center gap-8 fw-medium mt-24"
-                                                to={`farmer-two-details/${shop._id}`}
+                                                to={`/farmers-shops/${shop._id}`}
                                             >
                                                 View Shop <i className="ph ph-arrow-right" />
                                             </Link>

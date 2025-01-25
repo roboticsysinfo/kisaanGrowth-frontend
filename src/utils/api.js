@@ -4,9 +4,6 @@ const api = axios.create({
   baseURL: `${process.env.REACT_APP_API_URI}`, 
   
 });
-
-
-console.log("Base URL", api)
  
 
 api.interceptors.request.use((config) => {
